@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.HzsUserMapper">
+
+
+
+    <select id="findUser" resultType="com.example.demo.vo.HzsUBUser">
+        SELECT
+        ubuserId,
+        organizationId,
+        tenantId,
+        userPassword,
+        secretQuestion,
+        secretAnswer,
+        firstName,
+        middleName,
+        lastName,
+        gender,
+        dateOfBirth,
+        dateOfJoining,
+        email,
+        phoneNumber,
+        cellNumber,
+        userAddress,
+        city,
+        countryId,
+        profileImagePath,
+        userThemeId,
+        dateLastLogOn,
+        dateLastPasswordChange,
+        changePasswordOnLogon,
+        isDeleted,
+        userStatus,
+        activeRoleId,
+        jobTitle,
+        interests,
+        fullName,
+        isSocialUser,
+        username,
+        indexFailOver,
+        companyName,
+        companyWebsite,
+        userRoleTitles,
+        isLearner,
+        cityId,
+        schoolId
+        FROM
+        UBUser
+        WHERE
+        UBUserID = #{userId}
+    </select>
+
+    <select id="getUserTotalExp" resultType="java.util.Map">
+        SELECT
+        ExperienceValue,
+        ExperienceLevel
+        FROM
+        UBRewardLearnerExperience
+        WHERE
+        IsDeleted = 0
+        AND userid = #{userId}
+    </select>
+
+    <select id="getUserTotalCoins" resultType="java.lang.Integer">
+        SELECT
+        CheeseCoins
+        FROM
+        UBRewardLearnerCheeseCoins
+        WHERE
+        IsDeleted = 0
+        AND userid = #{userId}
+    </select>
+
+    <select id="getJudgementStatisticsTotalTimeSubPlaylistPreview" resultType="java.lang.Integer">
+        SELECT
+        SUM (InteractionTimeSpent) TimeSpent
+        FROM
+        UBAssessmentUserInteractionPreview
+        WHERE
+        UserID = #{userId}
+        AND AssessmentID = #{assessmentId}
+    </select>
+
+</mapper>
