@@ -1,0 +1,13 @@
+eureka:
+  instance:
+    hostname: config-server
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${REGISTER_SERVER_URL:http://localhost:8761/eureka/}
+mybatis:
+  mapper-locations: classpath*:com/hand/zhishinet/**/*Mapper.xml
+security:
+  basic:
+    enabled: false
+
