@@ -1,12 +1,10 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
 import com.example.demo.service.IHzsUserTestService;
 import com.example.demo.vo.HzsUBUser;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -36,8 +33,6 @@ public class HelloController {
     @Autowired
     private IHzsUserTestService userTestService;
 
-    @Value("${comfig.test.value}")
-    private String value;
 
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)
     @ApiImplicitParams({
@@ -53,7 +48,7 @@ public class HelloController {
 
     @RequestMapping(value = "/eurekatest" , method = RequestMethod.GET)
     public String index() {
-        return value;
+        return "ss";
     }
 
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)
