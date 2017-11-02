@@ -33,6 +33,8 @@ public class HelloController {
     @Autowired
     private IHzsUserTestService userTestService;
 
+    @Value("${server.port}")
+    private String port;
 
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)
     @ApiImplicitParams({
@@ -48,7 +50,7 @@ public class HelloController {
 
     @RequestMapping(value = "/eurekatest" , method = RequestMethod.GET)
     public String index() {
-        return "ss";
+        return port;
     }
 
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)

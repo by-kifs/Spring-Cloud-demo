@@ -4,19 +4,9 @@ spring:
   cloud:
     config:
       name: demo
-      discovery:
-        serviceId: config-server
-        enabled: true
-      failFast: true
-      retry:
-        maxAttempts: 32
-        multiplier: 1.5
-        maxInterval: 10000
-      server:
-        git:
-          uri: http://localhost:1313/
-      profile: dev
-      label: master
+      uri: http://localhost:1313/
+      profile: master
+
   datasource:
     url: ${COMMON_DB:jdbc:sqlserver://10.213.0.49:1414;databaseName=UBJomsomMain20170904}
     username: sa
@@ -32,16 +22,18 @@ spring:
     maximum-pool-size: 20
     remove-abandoned: true
     test-while-idle: true
-    #   min-idle: 0
+      #   min-idle: 0
     num-tests-per-eviction-run: 3
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:1212/eureka/
+      defaultZone: ${REGISTER_SERVER_URL:http://localhost:1212/eureka/}
   instance:
     prefer-ip-address: true
     hostname: demo
+
+
+
 
 
 
