@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      enabled: true
+      server:
+        git:
+          uri: ${CONFIG_URL:https://github.com/by-kifs/lasi/lasiGekenConfig}
+          searchPaths: '{profile}'
+          username: by-kifs
+          password: 9865mlr9865
+        bootstrap: true
+server:
+  port: ${PORT:8888}
+
