@@ -3,6 +3,7 @@ package com.example.demo.Controller;
 import com.example.demo.service.IHzsUserTestService;
 import com.example.demo.vo.HzsUBUser;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -35,6 +36,9 @@ public class HelloController {
     @Autowired
     private IHzsUserTestService userTestService;
 
+    @Value("${comfig.test.value}")
+    private String value;
+
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "Authorization", value = "Authorization token",
@@ -49,8 +53,7 @@ public class HelloController {
 
     @RequestMapping(value = "/eurekatest" , method = RequestMethod.GET)
     public String index() {
-        ServiceInstance instance = client.getLocalServiceInstance();
-        return "hello eureka";
+        return value;
     }
 
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)

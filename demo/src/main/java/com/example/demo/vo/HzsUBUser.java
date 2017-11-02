@@ -1,7 +1,5 @@
 package com.example.demo.vo;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import java.util.Date;
 
 /**
@@ -19,10 +17,6 @@ public class HzsUBUser {
     private String lastName;
     private int gender;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfBirth;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateOfJoining;
 
     private String email;
     private String phoneNumber;
@@ -33,10 +27,6 @@ public class HzsUBUser {
     private String profileImagePath;
     private int userThemeId;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateLastLogOn;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dateLastPasswordChange;
 
     private boolean changePasswordOnLogon;
     private boolean isDeleted;
@@ -135,22 +125,6 @@ public class HzsUBUser {
         this.gender = gender;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public Date getDateOfJoining() {
-        return dateOfJoining;
-    }
-
-    public void setDateOfJoining(Date dateOfJoining) {
-        this.dateOfJoining = dateOfJoining;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -213,22 +187,6 @@ public class HzsUBUser {
 
     public void setUserThemeId(int userThemeId) {
         this.userThemeId = userThemeId;
-    }
-
-    public Date getDateLastLogOn() {
-        return dateLastLogOn;
-    }
-
-    public void setDateLastLogOn(Date dateLastLogOn) {
-        this.dateLastLogOn = dateLastLogOn;
-    }
-
-    public Date getDateLastPasswordChange() {
-        return dateLastPasswordChange;
-    }
-
-    public void setDateLastPasswordChange(Date dateLastPasswordChange) {
-        this.dateLastPasswordChange = dateLastPasswordChange;
     }
 
     public boolean isChangePasswordOnLogon() {

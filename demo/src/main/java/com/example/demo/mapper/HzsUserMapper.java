@@ -5,9 +5,6 @@ import com.example.demo.vo.HzsUBUser;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.util.Date;
-import java.util.List;
 import java.util.Map;
 
 /**
