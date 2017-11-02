@@ -7,11 +7,11 @@ spring:
       enabled: true
       server:
         git:
-          uri: ${CONFIG_URL:https://github.com/by-kifs/lasi/lasiGekenConfig}
-          searchPaths: '{profile}'
+          uri: https://github.com/by-kifs/lasi/
+          searchPaths: lasiGekenConfig/dev
           username: by-kifs
           password: 9865mlr9865
         bootstrap: true
 server:
-  port: ${PORT:8888}
+  port: ${PORT:1313}
 
