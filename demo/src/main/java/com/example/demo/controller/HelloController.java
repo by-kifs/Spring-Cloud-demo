@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,8 +22,8 @@ public class HelloController {
 
 
 
-//    @Value("${wos.ids-server}")
-//    String idsserver;
+    @Value("${wos.ids-server}")
+    String idsserver;
 
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)
     @ApiImplicitParams({
@@ -38,7 +39,7 @@ public class HelloController {
 
     @RequestMapping(value = "/eurekatest" , method = RequestMethod.GET)
     public String index() {
-        return "";
+        return idsserver;
     }
 
 }

@@ -3,7 +3,15 @@ spring:
     name: demo
   cloud:
     config:
-      uri: http://localhost:1313/
+      name: demo
+      discovery:
+        serviceId: config-server
+        enabled: true
+      failFast: true
+      retry:
+        maxAttempts: 32
+        multiplier: 1.5
+        maxInterval: 10000
 eureka:
   client:
     serviceUrl:
