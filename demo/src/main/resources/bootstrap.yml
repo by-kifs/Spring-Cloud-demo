@@ -3,27 +3,7 @@ spring:
     name: demo
   cloud:
     config:
-      name: demo
       uri: http://localhost:1313/
-      profile: master
-
-  datasource:
-    url: ${COMMON_DB:jdbc:sqlserver://10.213.0.49:1414;databaseName=UBJomsomMain20170904}
-    username: sa
-    password: welcome123
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    initial-size: 5
-    max-wait: 30000
-    validation-query: select 1
-    validation-interval: 10000
-    validation-query-timeout: 5000
-    max-active: 20
-    max-idle: 20
-    maximum-pool-size: 20
-    remove-abandoned: true
-    test-while-idle: true
-      #   min-idle: 0
-    num-tests-per-eviction-run: 3
 eureka:
   client:
     serviceUrl:
@@ -31,6 +11,7 @@ eureka:
   instance:
     prefer-ip-address: true
     hostname: demo
+
 
 
 

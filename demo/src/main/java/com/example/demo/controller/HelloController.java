@@ -1,16 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.IHzsUserTestService;
-import com.example.demo.vo.HzsUBUser;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -27,14 +20,9 @@ import io.swagger.annotations.ApiOperation;
 public class HelloController {
 
 
-    @Autowired
-    private DiscoveryClient client;
 
-    @Autowired
-    private IHzsUserTestService userTestService;
-
-    @Value("${server.port}")
-    private String port;
+//    @Value("${wos.ids-server}")
+//    String idsserver;
 
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)
     @ApiImplicitParams({
@@ -50,18 +38,7 @@ public class HelloController {
 
     @RequestMapping(value = "/eurekatest" , method = RequestMethod.GET)
     public String index() {
-        return port;
-    }
-
-    @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "Authorization", value = "Authorization token",
-                    required = true, dataType = "string", paramType = "header")
-    })
-    @RequestMapping(value = "/mybatis" ,method = RequestMethod.GET)
-    public ResponseEntity mybatis(@RequestParam("userId") Integer userId) {
-        HzsUBUser user = userTestService.getUser(userId);
-        return new ResponseEntity(user, HttpStatus.OK);
+        return "";
     }
 
 }
