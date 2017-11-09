@@ -1,0 +1,9 @@
+server:
+  port: ${PORT:5555}
+
+zuul:
+  routes:
+    demo:
+      path: /api/demo/**
+      serviceId: demo
+      stripPrefix: false

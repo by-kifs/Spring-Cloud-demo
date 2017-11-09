@@ -18,6 +18,7 @@ import io.swagger.annotations.ApiOperation;
  * Created by cys on 2017/8/22.
  */
 @RestController
+@RequestMapping(value = "/api/demo")
 public class HelloController {
 
 
