@@ -7,3 +7,21 @@ zuul:
       path: /api/demo/**
       serviceId: demo
       stripPrefix: false
+
+
+# 解决第一次请求报超时异常的方案，因为 hystrix 的默认超时时间是 1 秒，因此请求超过该时间后，就会出现页面超时显示 ：
+#
+# 第一种方式：将 hystrix 的超时时间设置成 5000 毫秒
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+        timeout:
+          enabled: false
+#
+# 或者：
+# 第二种方式：将 hystrix 的超时时间直接禁用掉，这样就没有超时的一说了，因为永远也不会超时了
+# hystrix.command.default.execution.timeout.enabled: false
