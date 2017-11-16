@@ -1,0 +1,25 @@
+
+spring:
+  application:
+    name: bus-test
+  cloud:
+    config:
+      name: bus-test
+      discovery:
+        service-id: config-server
+        enabled: true
+      fail-fast: true
+      retry:
+        maxAttempts: 32
+        multiplier: 1.5
+        maxInterval: 10000
+eureka:
+  client:
+    service-url:
+      defaultZone: ${REGISTER_SERVER_URL:http://localhost:1212/eureka/}
+  instance:
+    prefer-ip-address: true
+    hostname: bus-test
+
+
+
