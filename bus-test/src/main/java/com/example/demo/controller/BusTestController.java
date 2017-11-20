@@ -36,7 +36,7 @@ public class BusTestController {
         return new ResponseEntity(args, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/bus" ,method = RequestMethod.GET)
+    @RequestMapping(value = "/test" ,method = RequestMethod.GET)
     public ResponseEntity busTest() {
         Map<String, String> args = new HashMap<>();
         args.put("code", bus);
