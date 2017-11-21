@@ -8,4 +8,4 @@ pagehelper:
   auto-dialect: true
   reasonable: false
 wos:
-  ids-server: ids.test.com
+  ids-server: ids
