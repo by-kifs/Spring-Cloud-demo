@@ -12,6 +12,9 @@ spring:
         maxAttempts: 32
         multiplier: 1.5
         maxInterval: 10000
+    bus:
+      trace:
+        enabled: true
   rabbitmq:
       host: localhost
       port: 5672

@@ -12,6 +12,12 @@ spring:
           username: by-kifs
           password: 9865mlr9865
         bootstrap: true
+    bus:
+      trace:
+        enabled: true
+management:
+  security:
+    enabled: false
 server:
   port: ${PORT:1313}
 
