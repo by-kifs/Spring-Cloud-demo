@@ -15,6 +15,10 @@ spring:
     bus:
       trace:
         enabled: true
+    stream:
+      bindings:
+        springCloudBusInput:
+          group: demo
   rabbitmq:
       host: localhost
       port: 5672
