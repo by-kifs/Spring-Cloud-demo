@@ -16,6 +16,7 @@ spring:
     bus:
       trace:
         enabled: true
+      enabled: true # 是否连接到消息总线，默认为true
     stream:
       bindings:
         springCloudBusInput:
