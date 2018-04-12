@@ -19,4 +19,10 @@ public interface EventClient {
             method = {RequestMethod.POST}
     )
     boolean publishEvent(@RequestBody Event var1);
+
+    @RequestMapping(
+            path = {"/api/global/public/event"},
+            method = {RequestMethod.POST}
+    )
+    boolean publishPublicEvent(@RequestBody Event var1);
 }

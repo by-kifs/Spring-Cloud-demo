@@ -12,6 +12,10 @@ public class FeignClientFallback implements EventClient {
     }
 
     public boolean publishEvent(Event event) {
-        return false;
+        throw new RuntimeException("事件触发失败:" + event);
+    }
+
+    public boolean publishPublicEvent(Event event) {
+        throw new RuntimeException("事件触发失败:" + event);
     }
 }

@@ -15,9 +15,6 @@ spring:
     bus:
       trace:
         enabled: true
-management:
-  security:
-    enabled: false
 server:
   port: ${PORT:1313}
 
