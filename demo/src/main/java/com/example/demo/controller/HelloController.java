@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.FeignService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
@@ -28,6 +30,9 @@ public class HelloController {
     @Value("${wos.ids-server}")
     String idsserver;
 
+    @Autowired
+    private FeignService feignService;
+
     @ApiOperation(value = "hello", httpMethod = "GET", response = ResponseEntity.class)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "Authorization", value = "Authorization token",
@@ -36,7 +41,8 @@ public class HelloController {
     @RequestMapping(value = "/hello" ,method = RequestMethod.GET)
     public ResponseEntity hello(){
         Map<String,String> args = new HashMap<>();
-        args.put("code","hello world");
+//        args.put("code","hello world");
+        args = feignService.getDemo();
         return new ResponseEntity(args,HttpStatus.OK);
     }
 
