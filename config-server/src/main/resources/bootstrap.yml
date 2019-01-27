@@ -9,8 +9,8 @@ spring:
         git:
           uri: https://github.com/by-kifs/lasi/
           searchPaths: lasiGekenConfig
-          username: by-kifs
-          password: 9865mlr9865
+          username: ******
+          password: ******
         bootstrap: true
     bus:
       trace:
