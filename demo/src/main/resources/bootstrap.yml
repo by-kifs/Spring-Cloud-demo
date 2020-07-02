@@ -6,23 +6,24 @@ spring:
       discovery:
         serviceId: config-server
         enabled: true
-      retry:
-        max-attempts: 32
-        multiplier: 1.5
-        max-interval: 1000
-      #        maxAttempts: 32
-#        multiplier: 1.5
-#        maxInterval: 10000
       label: master
       profile: test
-
+#      retry:
+#        max-attempts: 32
+#        multiplier: 1.5
+#        max-interval: 1000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
 eureka:
   client:
     serviceUrl:
       defaultZone: ${REGISTER_SERVER_URL:http://localhost:1212/eureka/}
-  instance:
-    prefer-ip-address: true
-    hostname: demo
+#  instance:
+#    prefer-ip-address: true
+#    hostname: demo
 
 
 

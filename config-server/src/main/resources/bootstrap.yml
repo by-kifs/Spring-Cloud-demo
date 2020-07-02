@@ -22,10 +22,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/by-kifs/lasi/
+          uri: https://github.com/by-kifs/Spring-Cloud-demo
           search-paths: lasiGekenConfig
-#          username: by-kifs
-#          password: 9865mlr9865
+
 
 eureka:
   client:
