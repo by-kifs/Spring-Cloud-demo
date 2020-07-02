@@ -1,5 +1,5 @@
-import com.example.demo.BusTestApplication;
-import com.example.demo.service.Sender;
+import com.lasi.demo.BusTestApplication;
+import com.lasi.demo.service.Sender;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

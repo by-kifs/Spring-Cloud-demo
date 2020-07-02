@@ -1,20 +1,34 @@
+#spring:
+#  application:
+#    name: config-server
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/by-kifs/lasi/
+#          searchPaths: lasiGekenConfig
+#          username: ${******}
+#          password: ${******}
+#        bootstrap: true
+#    bus:
+#      trace:
+#        enabled: true
+server:
+  port: ${PORT:1313}
 spring:
   application:
     name: config-server
-
   cloud:
     config:
-      enabled: true
       server:
         git:
           uri: https://github.com/by-kifs/lasi/
-          searchPaths: lasiGekenConfig
-          username: ${******}
-          password: ${******}
-        bootstrap: true
-    bus:
-      trace:
-        enabled: true
-server:
-  port: ${PORT:1313}
+          search-paths: lasiGekenConfig
+#          username: by-kifs
+#          password: 9865mlr9865
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1212/eureka/
 

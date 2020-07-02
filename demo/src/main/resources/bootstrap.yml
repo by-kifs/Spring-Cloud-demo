@@ -3,28 +3,19 @@ spring:
     name: demo
   cloud:
     config:
-      name: demo
       discovery:
         serviceId: config-server
         enabled: true
-      failFast: true
       retry:
-        maxAttempts: 32
+        max-attempts: 32
         multiplier: 1.5
-        maxInterval: 10000
-    bus:
-      trace:
-        enabled: true
-    stream:
-      bindings:
-        springCloudBusInput:
-          group: demo
-  rabbitmq:
-      host: localhost
-      port: 5672
-management:
-  security:
-    enabled: false
+        max-interval: 1000
+      #        maxAttempts: 32
+#        multiplier: 1.5
+#        maxInterval: 10000
+      label: master
+      profile: test
+
 eureka:
   client:
     serviceUrl:
