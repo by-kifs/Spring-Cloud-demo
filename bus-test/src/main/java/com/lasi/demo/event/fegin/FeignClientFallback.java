@@ -1,6 +1,6 @@
-package com.example.demo.event.fegin;
+package com.lasi.demo.event.fegin;
 
-import com.example.demo.event.Event;
+import com.lasi.demo.event.Event;
 import org.springframework.stereotype.Component;
 
 /**
