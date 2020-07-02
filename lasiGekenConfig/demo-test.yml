@@ -1,11 +1,4 @@
 server:
   port: ${PORT:8089}
-
-mybatis:
-  mapper-locations: classpath*:com/*Mapper.xml
-pagehelper:
-  row-bounds-with-count: true
-  auto-dialect: true
-  reasonable: false
 wos:
   ids-server: server
