@@ -1,33 +1,23 @@
-#spring:
-#  application:
-#    name: config-server
-#  cloud:
-#    config:
-#      server:
-#        git:
-#          uri: https://github.com/by-kifs/lasi/
-#          searchPaths: lasiGekenConfig
-#          username: ${******}
-#          password: ${******}
-#        bootstrap: true
-#    bus:
-#      trace:
-#        enabled: true
 server:
   port: ${PORT:1313}
 spring:
   application:
     name: config-server
+  profiles:
+    active: test
   cloud:
     config:
       server:
         git:
           uri: https://github.com/by-kifs/Spring-Cloud-demo
           search-paths: lasiGekenConfig
-
+        accept-empty: false
 
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:1212/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: config-server
 

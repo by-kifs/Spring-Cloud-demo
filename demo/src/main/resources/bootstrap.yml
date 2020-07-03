@@ -1,8 +1,11 @@
 spring:
   application:
     name: demo
+  profiles:
+    active: test
   cloud:
     config:
+      name: demo
       discovery:
         serviceId: config-server
         enabled: true
@@ -12,18 +15,13 @@ spring:
 #        max-attempts: 32
 #        multiplier: 1.5
 #        max-interval: 1000
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${REGISTER_SERVER_URL:http://localhost:1212/eureka/}
-#  instance:
-#    prefer-ip-address: true
-#    hostname: demo
+      defaultZone: http://localhost:1212/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: demo
 
 
 

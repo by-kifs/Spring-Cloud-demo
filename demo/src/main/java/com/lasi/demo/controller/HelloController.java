@@ -14,7 +14,7 @@ public class HelloController {
 
 
 
-    @Value("${info.message:error}")
+    @Value("${wos.ids-server}")
     String idsserver;
 
     @RequestMapping(value = "/eurekatest" , method = RequestMethod.GET)
