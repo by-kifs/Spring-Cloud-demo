@@ -7,7 +7,8 @@ spring:
       discovery:
         serviceId: config-server
         enabled: true
-      failFast: true
+      label: master
+      profile: test
       retry:
         maxAttempts: 32
         multiplier: 1.5
@@ -15,4 +16,8 @@ spring:
 eureka:
   client:
     serviceUrl:
-      defaultZone: ${REGISTER_SERVER_URL:http://localhost:1212/eureka/}
+      defaultZone: http://localhost:1212/eureka/
+  instance:
+    prefer-ip-address: true
+    hostname: api-gateway
+
