@@ -11,6 +11,8 @@ spring:
         git:
           uri: https://github.com/by-kifs/Spring-Cloud-demo
           search-paths: lasiGekenConfig
+          username: *******
+          password: *******
         accept-empty: false
 
 eureka:
